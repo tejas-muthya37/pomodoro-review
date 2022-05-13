@@ -1,0 +1,27 @@
+.Task {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Task>*:not(div) {
+    color: var(--tertiary-color);
+    text-decoration: none;
+}
+
+.Task .task-icons-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.Task .task-icons-group>* {
+    cursor: pointer;
+}
+
+.task-icons-group input {
+    accent-color: var(--primary-color);
+}
+
+.task-complete {
+    text-decoration: line-through;
+}
