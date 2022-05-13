@@ -1,0 +1,11 @@
+.homepage-header {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5rem;
+    color: var(--secondary-color);
+}
+
+.homepage-header p {
+    margin-top: 1rem;
+    font-weight: bold;
+}
