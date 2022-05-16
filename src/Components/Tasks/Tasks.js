@@ -94,6 +94,7 @@ const Tasks = () => {
 
   const addTask = () => {
     if (editingTaskIndex !== -1) {
+      console.log("Being edited");
       setTasksArray([
         ...tasksArray.slice(0, editingTaskIndex),
         {
@@ -116,6 +117,7 @@ const Tasks = () => {
         .then((data) => console.log(data))
         .catch((err) => console.log(err));
     } else {
+      console.log("Being added");
       setTasksArray([
         ...tasksArray,
         {
@@ -124,21 +126,21 @@ const Tasks = () => {
           ...taskDetails,
         },
       ]);
+      setEditingTaskIndex(-1);
+      fetch("https://627d3749e5ac2c452aff4e15.mockapi.io/api/pomodoro/tasks", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(taskDetails),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err));
     }
     handleClose();
     setTaskDetails({
       taskName: "",
       taskDescription: "",
     });
-    setEditingTaskIndex(-1);
-    fetch("https://627d3749e5ac2c452aff4e15.mockapi.io/api/pomodoro/tasks", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(taskDetails),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
   };
 
   const editTask = (id, index) => {
