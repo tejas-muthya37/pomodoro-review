@@ -72,3 +72,7 @@ form .btn-group button {
 .btn-disabled {
     cursor: not-allowed;
 }
+
+.btn-active {
+    cursor: pointer;
+}

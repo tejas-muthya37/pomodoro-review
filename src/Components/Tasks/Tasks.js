@@ -234,7 +234,7 @@ const Tasks = () => {
                 className={
                   taskDetails.taskName.length > 0 &&
                   taskDetails.taskDescription.length > 0
-                    ? ""
+                    ? "btn-active"
                     : "btn-disabled"
                 }
                 disabled={
