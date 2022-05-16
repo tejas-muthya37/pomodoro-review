@@ -9,10 +9,7 @@ const Tasks = () => {
   useEffect(() => {
     fetch("https://627d3749e5ac2c452aff4e15.mockapi.io/api/pomodoro/tasks", {
       method: "GET",
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
+    });
   }, []);
 
   const { tasksArray, setTasksArray } = useTask();
@@ -112,10 +109,7 @@ const Tasks = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(taskDetails),
         }
-      )
-        .then((res) => res.json())
-        .then((data) => console.log(data))
-        .catch((err) => console.log(err));
+      );
     } else {
       console.log("Being added");
       setTasksArray([
@@ -131,10 +125,7 @@ const Tasks = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(taskDetails),
-      })
-        .then((res) => res.json())
-        .then((data) => console.log(data))
-        .catch((err) => console.log(err));
+      });
     }
     handleClose();
     setTaskDetails({
@@ -163,10 +154,7 @@ const Tasks = () => {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       }
-    )
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
+    );
   };
 
   return (
