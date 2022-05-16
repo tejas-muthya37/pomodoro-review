@@ -230,7 +230,23 @@ const Tasks = () => {
               >
                 Cancel
               </button>
-              <button onClick={addTask}>Save</button>
+              <button
+                className={
+                  taskDetails.taskName.length > 0 &&
+                  taskDetails.taskDescription.length > 0
+                    ? ""
+                    : "btn-disabled"
+                }
+                disabled={
+                  taskDetails.taskName.length > 0 &&
+                  taskDetails.taskDescription.length > 0
+                    ? false
+                    : true
+                }
+                onClick={addTask}
+              >
+                Save
+              </button>
             </div>
           </form>
         </Box>

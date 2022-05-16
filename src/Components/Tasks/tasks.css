@@ -68,3 +68,7 @@ form .btn-group button {
     font-size: 0.9rem;
     border-radius: 2px;
 }
+
+.btn-disabled {
+    cursor: not-allowed;
+}
