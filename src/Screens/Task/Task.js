@@ -30,7 +30,9 @@ const Task = () => {
         <div className="task-details">
           <h3>{taskFound.taskName}</h3>
           <p className="task-description">{taskFound.taskDescription}</p>
-          <p className="task-add-date">Date Added : {taskFound.dateCreated}</p>
+          <p className="task-add-date">
+            Date Modified : {taskFound.dateCreated}
+          </p>
         </div>
       </div>
     </div>

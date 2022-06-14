@@ -91,11 +91,11 @@ const Tasks = () => {
 
   const addTask = () => {
     if (editingTaskIndex !== -1) {
-      console.log("Being edited");
       setTasksArray([
         ...tasksArray.slice(0, editingTaskIndex),
         {
           _id: uuid(),
+          dateCreated: `${dateFormatted.month} ${dateFormatted.date}, ${dateFormatted.year}`,
           ...taskDetails,
         },
         ...tasksArray.slice(editingTaskIndex + 1),
@@ -111,7 +111,6 @@ const Tasks = () => {
         }
       );
     } else {
-      console.log("Being added");
       setTasksArray([
         ...tasksArray,
         {
@@ -161,7 +160,18 @@ const Tasks = () => {
     <div className="Tasks">
       <header className="tasks-header">
         <h3>To - Do List</h3>
-        <span onClick={handleOpen}> + </span>
+        <span
+          onClick={() => {
+            setTaskDetails({
+              taskName: "",
+              taskDescription: "",
+            });
+            handleOpen();
+          }}
+        >
+          {" "}
+          +{" "}
+        </span>
       </header>
       <div className="tasks-body">
         {tasksArray.map((task, index) => {
